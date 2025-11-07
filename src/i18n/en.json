@@ -1,0 +1,75 @@
+{
+  "common": {
+    "appName": "SmartRent360",
+    "language": "English",
+    "language_code": "en",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "nav": {
+    "home": "Home",
+    "properties": "Properties",
+    "agents": "Agents",
+    "tenants": "Tenants",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Sign In",
+    "signup": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "loginSuccess": "Welcome back!",
+    "signupSuccess": "Account created successfully",
+    "invalidCredentials": "Invalid email or password",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "passwordTooShort": "Password must be at least 8 characters"
+  },
+  "properties": {
+    "title": "Properties",
+    "addNew": "Add New Property",
+    "search": "Search properties",
+    "price": "Price",
+    "location": "Location",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "area": "Area (sqm)",
+    "verified": "Verified",
+    "notVerified": "Not Verified",
+    "noProperties": "No properties found",
+    "details": "Property Details",
+    "description": "Description",
+    "amenities": "Amenities"
+  },
+  "agents": {
+    "title": "Agents",
+    "licensed": "Licensed",
+    "verified": "Verified",
+    "properties": "Properties Listed",
+    "contact": "Contact Agent"
+  },
+  "tenants": {
+    "title": "Tenants",
+    "searchProperties": "Search Properties",
+    "favorites": "My Favorites",
+    "applications": "Applications",
+    "profile": "My Profile"
+  },
+  "messages": {
+    "confirmDelete": "Are you sure you want to delete this?",
+    "savingChanges": "Saving changes...",
+    "changedSaved": "Changes saved successfully"
+  }
+}

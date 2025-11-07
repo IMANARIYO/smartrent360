@@ -1,0 +1,75 @@
+{
+  "common": {
+    "appName": "SmartRent360",
+    "language": "Kinyarwanda",
+    "language_code": "rw",
+    "loading": "Inatwara...",
+    "error": "Habaye ikosa",
+    "success": "Byagenze neza",
+    "cancel": "Guhagarika",
+    "save": "Kubika",
+    "delete": "Gusiba",
+    "edit": "Kwiyandikanya",
+    "back": "Inyuma",
+    "next": "Ibikurikira",
+    "previous": "Ibiheruka"
+  },
+  "nav": {
+    "home": "Ahabanza",
+    "properties": "Inyubako",
+    "agents": "Abakozi",
+    "tenants": "Ababari",
+    "dashboard": "Ikibaho",
+    "settings": "Ibisabwa",
+    "logout": "Gusohoka"
+  },
+  "auth": {
+    "login": "Injira",
+    "signup": "Iyandikishe",
+    "email": "Imeli",
+    "password": "Ijambo ryibanga",
+    "rememberMe": "Ndibyirikire",
+    "forgotPassword": "Warahakana ijambo?",
+    "loginSuccess": "Murakaza neza!",
+    "signupSuccess": "Konti yakoze neza",
+    "invalidCredentials": "Imeli cyangwa ijambo ritakuri",
+    "emailRequired": "Imeli isabwa",
+    "passwordRequired": "Ijambo risabwa",
+    "passwordTooShort": "Ijambo rya myikire nibura inyuguti 8"
+  },
+  "properties": {
+    "title": "Inyubako",
+    "addNew": "Ongeraho Inyubako",
+    "search": "Shakisha inyubako",
+    "price": "Igiciro",
+    "location": "Ahantu",
+    "bedrooms": "Icalike cyubwenge",
+    "bathrooms": "Icalike cy'amazi",
+    "area": "Agace (sqm)",
+    "verified": "Byemejwe",
+    "notVerified": "Ntibemejwe",
+    "noProperties": "Nta inyubako yafutanijwe",
+    "details": "Ibisobanuro by'Inyubako",
+    "description": "Ibisobanuro",
+    "amenities": "Ibikoresho"
+  },
+  "agents": {
+    "title": "Abakozi",
+    "licensed": "Yemewe",
+    "verified": "Byemejwe",
+    "properties": "Inyubako Zahishuwe",
+    "contact": "Kontakta Umukozi"
+  },
+  "tenants": {
+    "title": "Ababari",
+    "searchProperties": "Shakisha Inyubako",
+    "favorites": "Inzira Zyacu",
+    "applications": "Ubwiyunge",
+    "profile": "Ikibazo Cyacu"
+  },
+  "messages": {
+    "confirmDelete": "Urashaka gusiba ibi?",
+    "savingChanges": "Gusezerera ibihindagurikwa...",
+    "changedSaved": "Ibihindagurikwa byakubikiye neza"
+  }
+}
