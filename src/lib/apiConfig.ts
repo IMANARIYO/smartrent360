@@ -5,8 +5,8 @@ import axios, {
 } from "axios";
 
 // Base configuration
-// const BASE_URL = "https://smartrent360-backend.onrender.com/api/v1/";
-const BASE_URL = "http://localhost:4000/api/v1/";
+const BASE_URL = "https://smartrent360-backend.onrender.com/api/v1/";
+// const BASE_URL = "http://localhost:4000/api/v1/";
 const ACCESS_TOKEN_KEY = "accessToken";
 
 // Create axios instance
