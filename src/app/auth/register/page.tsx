@@ -1,160 +1,60 @@
 "use client"
 
-import type React from "react"
-
-
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { MainLayout } from "@/components/layout/main-layout"
+import { RegisterForm } from "../_components/RegisterForm"
 import { useI18n } from "@/i18n/i18n-provider"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft } from "lucide-react"
 
-export default function Register() {
+export default function RegisterPage() {
   const { language } = useI18n()
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    role: "tenant",
-    phone: "",
-  })
-  const [loading, setLoading] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    // Mock registration - replace with actual API
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
-      <Card className="w-full max-w-md">
-        <div className="p-8">
-          <h1 className="text-2xl font-bold text-foreground mb-2">
-            {language === "en" ? "Create Account" : "Guka Akawunti"}
-          </h1>
-          <p className="text-muted-foreground mb-6">
-            {language === "en" ? "Join SmartRent360 today" : "Jya muri SmartRent360 umuliro"}
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Full Name" : "Izina Ryose"}
-              </label>
-              <Input
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                placeholder={language === "en" ? "John Doe" : "Jean Doe"}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Phone Number" : "Nimero y'Teleporo"}
-              </label>
-              <Input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+250 7XX XXX XXX"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Email" : "Imeyili"}
-              </label>
-              <Input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder={language === "en" ? "your@email.com" : "yac@imeyili.com"}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Account Type" : "Ubwoko bw'Akawunti"}
-              </label>
-              <select
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              >
-                <option value="tenant">{language === "en" ? "Tenant" : "Umuntu wizeye mu nzu"}</option>
-                <option value="commissioner">{language === "en" ? "Commissioner" : "Umwihangane"}</option>
-                <option value="landlord">{language === "en" ? "Landlord" : "Umubare"}</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Password" : "Ijambure"}
-              </label>
-              <Input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="••••••••"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                {language === "en" ? "Confirm Password" : "Menya Ijambure"}
-              </label>
-              <Input
-                type="password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                placeholder="••••••••"
-                required
-              />
-            </div>
-
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading
-                ? language === "en"
-                  ? "Creating account..."
-                  : "Gukora akawunti..."
-                : language === "en"
-                  ? "Sign Up"
-                  : "Andikishe"}
-            </Button>
-          </form>
-
-          <p className="text-center text-muted-foreground mt-6 text-sm">
-            {language === "en" ? "Already have an account?" : "Wabu akawunti?"}{" "}
-            <Link href="/auth/login" className="text-primary-500 hover:text-primary-600 font-semibold">
-              {language === "en" ? "Sign in" : "Injira"}
-            </Link>
-          </p>
+    <MainLayout>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/luxury-villa-kigali.jpg"
+            alt="Luxury villa in Kigali"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
         </div>
-      </Card>
-    </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-md mx-auto px-4">
+          <div className="text-center mb-8">
+            <Badge className="mb-6 inline-block bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              {language === "en" ? "Join SmartRent360" : "Injira kuri SmartRent360"}
+            </Badge>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {language === "en" ? "Create Your Account" : "Gukora Konti Yawe"}
+            </h1>
+            <p className="text-white/90 mb-8">
+              {language === "en"
+                ? "Join thousands of Rwandans finding their perfect homes."
+                : "Injira mu banyarwanda bashakisha inzu zabo nziza."}
+            </p>
+          </div>
+
+          <RegisterForm />
+
+          <div className="text-center mt-6">
+            <Link
+              href="/auth/login"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {language === "en" ? "Back to Login" : "Garuka ku Kwinjira"}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </MainLayout>
   )
 }

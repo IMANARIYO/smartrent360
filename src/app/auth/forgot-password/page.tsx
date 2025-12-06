@@ -1,78 +1,60 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import type React from "react"
-
-
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { MainLayout } from "@/components/layout/main-layout"
+import { ForgotPasswordForm } from "../_components/ForgotPasswordForm"
 import { useI18n } from "@/i18n/i18n-provider"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft } from "lucide-react"
 
-export default function ForgotPassword() {
-  const { t, language } = useI18n()
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+export default function ForgotPasswordPage() {
+  const { language } = useI18n()
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
-      <Card className="w-full max-w-md">
-        <div className="p-8">
-          <h1 className="text-2xl font-bold text-foreground mb-2">
-            {language === "en" ? "Reset Password" : "Subiramo Ijambure"}
-          </h1>
-          <p className="text-muted-foreground mb-6">
-            {language === "en"
-              ? "Enter your email to receive reset instructions"
-              : "Injiza imeyili yawe kugirango tuguhe ibimenyetso byo gusubiramo ijambure"}
-          </p>
-
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  {language === "en" ? "Email Address" : "Aderesi y'Imeyili"}
-                </label>
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={language === "en" ? "your@email.com" : "yac@imeyili.com"}
-                  required
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                {language === "en" ? "Send Reset Link" : "Ohereza Ikintu cy'Gusubiramo"}
-              </Button>
-            </form>
-          ) : (
-            <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center">
-              <p className="text-primary-900 font-semibold mb-4">
-                {language === "en" ? "Check your email!" : "Reba imeyili yawe!"}
-              </p>
-              <p className="text-primary-700 text-sm">
-                {language === "en"
-                  ? "We've sent reset instructions to your email address."
-                  : "Twagusohotse ibimenyetso byo gusubiramo kuri imeyili yawe."}
-              </p>
-            </div>
-          )}
-
-          <p className="text-center text-muted-foreground mt-6">
-            <Link href="/auth/login" className="text-primary-500 hover:text-primary-600 font-semibold">
-              {language === "en" ? "Back to login" : "Gusubira mu injira"}
-            </Link>
-          </p>
+    <MainLayout>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/modern-house-rwanda.jpg"
+            alt="Modern house in Rwanda"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
         </div>
-      </Card>
-    </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-md mx-auto px-4">
+          <div className="text-center mb-8">
+            <Badge className="mb-6 inline-block bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              {language === "en" ? "Password Recovery" : "Kugarura Ijambo ry'Ibanga"}
+            </Badge>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {language === "en" ? "Forgot Your Password?" : "Wibagiwe Ijambo ry'Ibanga?"}
+            </h1>
+            <p className="text-white/90 mb-8">
+              {language === "en"
+                ? "Enter your phone number and we'll send you reset instructions."
+                : "Andika nomero ya telefoni yawe tuzagukohereza amabwiriza."}
+            </p>
+          </div>
+
+          <ForgotPasswordForm />
+
+          <div className="text-center mt-6">
+            <Link
+              href="/auth/login"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {language === "en" ? "Back to Login" : "Garuka ku Kwinjira"}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </MainLayout>
   )
 }

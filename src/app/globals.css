@@ -178,3 +178,24 @@
 .card-hover {
   @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
 }
+
+/* Phone Input Styles */
+.PhoneInput {
+  @apply w-full;
+}
+
+.PhoneInput input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors;
+}
+
+.PhoneInput__country-select {
+  @apply border-r border-gray-300 pr-2 mr-2;
+}
+
+.PhoneInput__country-select-arrow {
+  @apply text-gray-500;
+}
+
+.PhoneInput--focus {
+  @apply ring-2 ring-primary/20;
+}
